@@ -25,6 +25,8 @@ This plugin was desined to collect data from any mounted Linux `network` proc fi
 
 It can be used to collect host network usage info, even if Fluent Bit is running inside a container, which is not achiavable using **native** Fluent Bit `netif` plugin.
 
+> Potentially LXCFS could bypass that without requiring a custom plugin
+
 ## Configurations
 
 This input plugin can be configured using the following parameters:
