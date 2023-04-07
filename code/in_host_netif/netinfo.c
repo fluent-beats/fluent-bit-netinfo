@@ -179,10 +179,11 @@ static int in_netinfo_collect_linux(struct flb_input_instance *i_ins,
 
         for (i = 0; i < entry_len; i++) {
             if (ctx->entry[i].checked) {
-                key_len = ctx->interface_len + ctx->entry[i].name_len + 1/* '.' */;
+                /* '.' */
+                key_len = ctx->interface_len + ctx->entry[i].name_len + 1;
 
-                snprintf(key_name, key_len + 1 /* add null character */,
-                         "%s.%s", ctx->interface, ctx->entry[i].name);
+                /* key_len + 1 = add null character */
+                snprintf(key_name, key_len + 1,"%s.%s", ctx->interface, ctx->entry[i].name);
                 msgpack_pack_str(&mp_pck, key_len);
                 msgpack_pack_str_body(&mp_pck, key_name, key_len);
 
