@@ -16,8 +16,8 @@
  *  limitations under the License.
  */
 
-#ifndef FLB_IN_HOST_NETIF_H
-#define FLB_IN_HOST_NETIF_H
+#ifndef FLB_IN_NETINFO_H
+#define FLB_IN_NETINFO_H
 
 #include <stdint.h>
 #include <unistd.h>
@@ -32,26 +32,24 @@
 
 struct entry_define
 {
-    char  *name;
-    int   checked;
+    char *name;
+    int  checked;
 };
 
 struct netif_entry {
-    int   checked;
-
-    char  *name;
-    int   name_len;
-
+    int checked;
+    char *name;
+    int name_len;
     uint64_t prev;
     uint64_t now;
 };
 
 struct flb_in_netinfo_config {
-    char*  proc_path;     /* allows point to host proc file */
+    char *proc_path;     /* allows point to host proc file */
     const char *interface;
-    int  interface_len;
-    int  verbose;
-    int  first_snapshot;   /* indicate this is the first collect */
+    int interface_len;
+    int verbose;
+    int first_snapshot;   /* indicate this is the first collect */
     struct netif_entry *entry;
     int entry_len;
     int map_num;
