@@ -23,7 +23,7 @@ This plugin **will only work** on hosts running Linux, because it relies on `/pr
 
 This plugin was desined to collect data from any mounted Linux `network` proc file.
 
-It can be used to collect host network usage info, even if Fluent Bit is running inside a container, which is not achiavable using **native** Fluent Bit `netif` plugin.
+It can be used to collect host network usage info, even if Fluent Bit is running inside a container, which is not achievable using **native** Fluent Bit `netif` plugin.
 
 > Potentially LXCFS could bypass that without requiring a custom plugin
 
